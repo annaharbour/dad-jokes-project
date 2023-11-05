@@ -65,7 +65,8 @@ class JokeList extends Component {
       st => ({
         jokes: st.jokes.filter(j => 
           j.id !== id)
-      })
+      }),
+      () => window.localStorage.setItem("jokes", JSON.stringify(this.state.jokes))
     )
   }
   handleClick() {
